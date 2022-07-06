@@ -42,10 +42,10 @@ const fetchFailed = (failure) => ({
 
 
 export const fetchGreetings = () => async (dispatch) => {
-  dispatch(fetchStarted);
+  dispatch(fetchStarted());
 
   try {
-    const response = await fetch('/api/v1/greeting');
+    const response = await fetch('http://localhost:3000/api/v1/greeting');
     if (!response.ok) {
       throw Error(response.statusText);
     }
